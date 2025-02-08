@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="icon" href="education-learning-6-svgrepo-com.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            padding: 25px;
+            background-color: #121212;
+            color: #ffffff;
+            font-size: 20px;
+            text-align: center;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            background: #1e1e1e;
+            z-index: 1000;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu li {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: #333;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: #1e1e1e;
+                padding: 10px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        button{
+            background-color: #ffffff85;
+            font-weight: 600;
+            font-family:'Poppins', sans-serif;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover{
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="education-learning-6-svgrepo-com.svg" alt="EduNexus Logo" class="brand-logo">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#about-us" class="nav-link">About</a></li>
+                <li><a href="su.html" class="nav-link">Sign Up / Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1>Free YT Resources</h1>
+    <p>Here are the Curated Free and Best in Class Lectures from YouTube:</p><br><br>
+    <div class="container">
+        <button onclick="window.open('https://youtu.be/HD13eq_Pmp8', '_blank')">HTML</button>
+        <button onclick="window.open('https://youtu.be/OXGznpKZ_sA', '_blank')">CSS</button>
+        <button onclick="window.open('https://youtu.be/EerdGm-ehJQ', '_blank')">JavaScript</button>
+        <button onclick="window.open('https://youtu.be/KJgsSFOSQv0', '_blank')">C</button>
+        <button onclick="window.open('https://youtube.com/playlist?list=PLBlnK6fEyqRh6isJ01MBnbNpV3ZsktSyS', '_blank')">C++</button>
+        <button onclick="window.open('https://youtube.com/playlist?list=PLsyeobzWxl7pe_IiTfNyr55kwJPWbgxB5', '_blank')">Java</button>
+        <button onclick="window.open('https://youtu.be/_uQrJ0TkZlc', '_blank')">Python</button>
+        <button onclick="window.open('https://youtube.com/playlist?list=PLfqMhTWNBTe3LtFWcvwpqTkUSlB32kJop&si=KE9A1idGoMslrJoL', '_blank')">DSA in Java</button>
+        <button onclick="window.open('https://youtube.com/playlist?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&si=s2kajBAgR29MiR6r', '_blank')">DSA in C++</button>
+        <button onclick="window.open('https://youtu.be/pkYVOmU3MgA?si=qaKkbT5BdBXgm6uv', '_blank')">DSA in Python</button>
+        <button onclick="window.open('https://youtube.com/playlist?list=PLMufDeLh5x2DVLPcfJGUxd_Yd9LXJZ3NK&si=CjWWvABZFPULRlHz', '_blank')">Aptitude</button>
+        <button onclick="window.open('https://youtu.be/zTjRZNkhiEU?si=Mpaxns56dfnhOz2k', '_blank')">Version Control</button>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
