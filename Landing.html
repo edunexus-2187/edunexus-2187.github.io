@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduNexus - Your premier engineering education platform">
+    <meta name="keywords" content="engineering, education, online learning, tutoring, resources">
+    <meta name="author" content="EduNexus Team">
+    <title> EduNexus </title>
+    <link rel="icon" href="education-learning-6-svgrepo-com.svg">
+    <style>
+        :root {
+            --primary-color: #00ff00;
+            --secondary-color: #00ced1;
+            --accent-color: #0fff4f;
+            --text-color: #ffffff;
+            --bg-color: #000000;
+            --font-main: 'Poppins', system-ui, -apple-system, sans-serif;
+            --font-heading: 'Chakra Petch', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            box-shadow: 0 0 15px var(--secondary-color), 0 0 25px var(--accent-color);
+        }
+
+        .brand-logo {
+            cursor: pointer;
+            width: 150px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-left: auto;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin: 4rem 0;
+            scroll-margin-top: 100px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+
+
+        footer {
+            background: #111;
+            padding: 3rem 2rem;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-color);
+        }
+        /* .about-container {
+    background: #151515;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.info {
+    margin-top: 10px;
+    margin-left: 2rem;
+    text-align: center;
+    color: white;
+    font-size: 15pt;
+    font-family: "Chakra Petch", serif;
+}
+.info p {
+    margin: 5px 0;
+    color: white;
+    font-family: sans-serif;
+}
+.map-container {
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline;
+}
+a{
+    text-decoration: none;
+}
+
+#googleMap{
+    display: inline;
+}
+.about-container{
+display: flex;
+
+}
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 860px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.95);
+                width: 100%;
+                text-align: center;
+                padding: 2rem;
+                transition: right 0.3s ease;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-link {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            body {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            .brand-logo {
+                width: 120px;
+            }
+
+            footer {
+                padding: 2rem 1rem;
+            }
+
+            .about-container {
+                display: block;
+                text-align: center;
+            }
+
+            iframe {
+                width: 100%;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+            }
+
+            .service-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+       <div class="logo">
+        <img src="education-learning-6-svgrepo-com.svg" alt="logo">
+       </div>
+        <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">☰</button>
+        
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="#about-us" class="nav-link">About</a></li>
+                <li><a href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/02/12/20250202121735-520U14WW.json" class="nav-link">Nexa - AI Assistant</a></li>
+                <li><a href="signup.html" class="nav-link">Sign Up / Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="intro">
+            <h2 class="section-title">Welcome to EduNexus</h2>
+            <div class="content-wrapper" style="margin: 0 auto; text-align: center;">
+                <p class="lead-text">The best learning partner for engineering students. Our online portal is an academic resource base where you find top-quality learning material, tutorials, and guide books to succeed in your career. Whether it's an intricate concept, how it is put to practical usage, or help on how to ace an examination, we cover all that is important for the academic journey of the student. Our mission is to make engineering education more accessible, engaging, and effective for students all over the world. Join us and take your learning experience to the next level!</p>
+            </div>
+         <br>
+            <div class="content-wrapper" style="margin: 0 auto; text-align: center;">
+                <p class="lead-text">We believe that quality education should be accessible to all at <b>Edu Nexus</b>. That's why we provide a collection of free e-books for core engineering topics that help the students understand these concepts easily. Our online interactive classes are offered with the added advantage of having the option of a free trial class before deciding to take on the full course. Whether you are suffering from difficult courses or want a technical boost up, our tutor instructors are prepared to guide and assist you from the very bottom to the tiniest points. Start off your learning course with us right now and look forward to plenty of opportunities under the umbrella of engineering!</p>
+            </div>
+        </div>
+<br><br><br>
+
+        </div>
+    <br><br><br>
+        <div id="services">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <article class="service-card" style="margin: 0 auto; text-align: center;">
+                    <h3 class="service-title">Free Resources</h3>
+                    <p>We offer a range of e-books covering essential engineering subjects, helping students grasp complex concepts with ease.</p>
+                </article>
+    
+                <article class="service-card" style="margin: 0 auto; text-align: center;">
+                    <h3 class="service-title">Free Classes</h3>
+                    <p> We offer free classes on essential engineering subjects, giving students a firsthand experience of our teaching approach and helping them build a strong foundation.</p>
+                </article>
+    
+                <article class="service-card" style="margin: 0 auto; text-align: center;">
+                    <h3 class="service-title">Project-Based Learning</h3>
+                    <p>Work on real-life projects to apply your knowledge in a practical setting, gain hands-on experience, and develop essential problem-solving skills.</p>
+                </article>
+
+                <article class="service-card" style="margin: 0 auto; text-align: center;">
+                    <h3 class="service-title">AI Powered Doubt Support</h3>
+                    <p>Our AI-powered doubt support provides instant, accurate answers 24/7, helping students overcome challenges and learn faster.</p>
+                </article>
+
+                <article class="service-card" style="margin: 0 auto; text-align: center;">
+                    <h3 class="service-title">Career Mentorship</h3>
+                    <p>Get expert guidance, resume building, and interview prep.Learn essential soft skills and networking strategies for career growth.</p>
+                </article>
+
+                <article class="service-card" style="margin: 0 auto; text-align: center;">
+                    <h3 class="service-title">Cloud Computing</h3>
+                    <p>Gain expertise in AWS, Google Cloud, and Azure to become a certified cloud architect.</p>
+                </article>
+
+            </div>
+        </div>
+
+       
+    </main>
+
+    <footer>
+        <section id="about-us">
+            <div class="about-container">
+            <div class="about-container">
+                <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3883.3993007561007!2d80.0274183!3d13.262969400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52814946112d6f%3A0x57a644f6f25f9b0c!2sAmrita%20Vishwa%20Vidyapeetham%2C%20Chennai!5e0!3m2!1sen!2sin!4v1737958559166!5m2!1sen!2sin" 
+                width="430" height="300" style="border: 5px solid black;border-radius: 10px;box-shadow: 0 0 10px 5px white; display: inline;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="info">
+                <p><strong>Project Made by: </strong> <br> N.Sarvan Kumar <br>  Sahil Pareek <br>  Mohan Surendra</p>
+                <p><strong>Address: </strong> 337/1 A, Vallal RCK Nagar, SH 50A, Vengal, Tamil Nadu 601103</p>
+                <p><strong>Phone: </strong>+91 73306 73881</p>
+            </div>
+        </div>
+        </section>
+        <div>
+            <br>
+            <hr>
+            <p>© <span id="currentYear"></span> EduNexus | All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('navMenu');
+            const toggleButton = document.querySelector('.menu-toggle');
+            if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+            
+    </script>
+    
+</body>
+</html>
