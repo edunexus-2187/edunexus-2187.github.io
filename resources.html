@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - EduNexus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: #111;
+            box-shadow: 0 0 15px #00ced1;
+        }
+        .resources-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+        }
+        .resource-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .resource-card:hover {
+            box-shadow: 0 0 15px #0fff4f;
+        }
+        .resource-icon {
+            font-size: 2.5rem;
+            color: #00ff00;
+            margin-bottom: 1rem;
+        }
+        .resource-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: #00ced1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>EduNexus Resources</h1>
+        <p>Access top-quality learning materials for free!</p>
+    </header>
+
+    <section class="resources-container">
+        <div class="resource-card">
+            <i class="fa fa-book resource-icon"></i>
+            <h3>E-Books</h3>
+            <p>Download free e-books on AI, Web Development, Data Science, and more.</p>
+            <a href="e-book.html">Explore E-Books</a>
+        </div>
+        <div class="resource-card">
+            <i class="fa fa-book resource-icon"></i>
+            <h3>Roadmaps</h3>
+            <p>Download free Roadmaps on AI, Web Development, Data Science, and more.</p>
+            <a href="roadmap.html">Explore Roadmap</a>
+        </div>
+        
+        <div class="resource-card">
+            <i class="fa fa-play-circle resource-icon"></i>
+            <h3>Video Tutorials</h3>
+            <p>Watch step-by-step tutorials on coding, design, and business.</p>
+            <a href="courses.html">Watch Now</a>
+        </div>
+        
+    
+    </section>
+</body>
+</html>
